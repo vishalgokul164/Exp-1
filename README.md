@@ -1,11 +1,16 @@
-# Experiment 1: Exploring NumPy and Pandas
+# EXPERIMENT 1. EXPLORING NUMPY AND PANDAS
 
-## Aim
+
+
+## AIM
+
 
 To understand the use of NumPy and Pandas for performing basic data
 manipulation and analysis in Python.
 
-## Algorithm
+
+## ALGORITHM
+
 
 1.  Import the NumPy library for matrix and numerical operations.
 2.  Define a two-dimensional square matrix `A` and a vector `b`.
@@ -19,7 +24,10 @@ manipulation and analysis in Python.
     vector, and eigenvalues.
 8.  End the program.
 
-## Formulas / Theory
+
+
+## FORMULAS / THEORY
+
 
 -   **Transpose:** `Aᵀ` --- interchange rows and columns.
 -   **Inverse:** `A⁻¹ = adj(A) / |A|`, provided `det(A) ≠ 0`.
@@ -27,11 +35,38 @@ manipulation and analysis in Python.
 -   **Eigen decomposition:** `A v = λ v`, where `λ` is an eigenvalue and
     `v` is an eigenvector.
 
-## Coding
+    
+
+## CODING 
 
 
-## Output
+import numpy as np  
+A = np.array([[4.0, 2.0],  
+              [1.0, 3.0]])  
+b = np.array([10.0, 8.0])  
+A_transpose = A.T  
+if np.linalg.det(A) != 0:  
+    A_inv = np.linalg.inv(A)  
+else:  
+    raise ValueError("Matrix A is singular and cannot be inverted.")  
+x = np.linalg.solve(A, b)  
+eigenvalues, eigenvectors = np.linalg.eig(A)  
+print("Matrix A:\n", A)  
+print("\nTranspose of A:\n", A_transpose)  
+print("\nInverse of A:\n", A_inv)  
+print("\nSolution vector x:\n", x)  
+print("\nEigenvalues:\n", eigenvalues)  
+print("\nEigenvectors:\n", eigenvectors)  
 
 
-## Result
+
+## OUTPUT
+
+<img width="236" height="348" alt="image" src="https://github.com/user-attachments/assets/74adcd28-6689-4d8d-91f8-2db922a084e7" />
+
+
+
+## RESULT 
+
+It flipped the matrix, checked that it could be inverted, found its inverse, solved the equation for x, and calculated its eigenvalues and eigenvectors without any issues.
 
